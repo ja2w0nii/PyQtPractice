@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QCheckBox
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QCheckBox, QRadioButton, QComboBox
 from PyQt5.QtCore import Qt
 
 
@@ -53,14 +53,44 @@ class MyApp(QWidget):
 
 
         """ Check Box """
-        cb = QCheckBox('Show title', self)
-        cb.move(20, 20)
-        cb.toggle()
-        cb.stateChanged.connect(self.changeTitle) # 체크박스의 상태가 바뀔 때 발생하는 시그널 (stateChanged)을 changeTitle() 메서드에 연결
+        # cb = QCheckBox('Show title', self)
+        # cb.move(20, 20)
+        # cb.toggle()
+        # cb.stateChanged.connect(self.changeTitle) # 체크박스의 상태가 바뀔 때 발생하는 시그널 (stateChanged)을 changeTitle() 메서드에 연결
+
+
+        """ Radio Button """ # 기본적으로 autoExclusive로 설정되어 있음 (하나의 버튼을 선택하면 나머지 버튼들은 선택 해제)
+        # rbtn1 = QRadioButton('First Button', self)
+        # rbtn1.move(50, 50)
+        # rbtn1.setChecked(True)
+
+        # rbtn2 = QRadioButton(self)
+        # rbtn2.move(50, 70)
+        # rbtn2.setText('Second Button')
+
+
+        """ Combo Box """
+        self.lbl = QLabel('Option1', self)
+        self.lbl.move(50, 150)
+
+        cb = QComboBox(self)
+        cb.addItem('Option1')
+        cb.addItem('Option2')
+        cb.addItem('Option3')
+        cb.addItem('Option4')
+        cb.move(50, 50)
+
+        cb.activated[str].connect(self.onActivated) # 옵션을 선택하면 onActivated() 메서드 호출됨
 
         self.setWindowTitle('PyQt5 Widget Practice')
         self.setGeometry(300, 300, 300, 200)
         self.show()
+
+
+        """ Line Edit: 한 줄의 문자열을 입력하고 수정할 수 있도록 하는 위젯 """
+
+
+
 
     # 체크박스의 체크 여부에 따라 타이틀바 텍스트 변경
     def changeTitle(self, state): 
@@ -68,6 +98,10 @@ class MyApp(QWidget):
             self.setWindowTitle('QCheckBox')
         else:
             self.setWindowTitle(' ')
+
+    def onActivated(self, text):
+        self.lbl.setText(text) # 선택한 항목의 텍스트가 라벨에 나타남
+        self.lbl.adjustSize() # 라벨의 크기를 자동으로 조절
 
 
 
@@ -99,4 +133,11 @@ pressed() : 눌렸을 때 발생합니다.
 released() : 눌렀다 뗄 때 발생합니다.
 toggled() : 상태가 바뀔 때 발생합니다.
 stateChanged() : 상태가 바뀔 때 발생합니다.
+"""
+
+"""
+QLineEdit.Normal / 0: 입력된 문자를 표시합니다. (기본값)
+QLineEdit.NoEcho / 1: 문자열을 표시하지 않습니다. 이 설정은 비밀번호의 글자수도 공개하지 않을 때 유용합니다.
+QLineEdit.Password / 2: 입력된 문자 대신 비밀번호 가림용 문자를 표시합니다.
+QLineEdit.PasswordEchoOnEdit / 3: 입력할 때만 문자를 표시하고, 수정 중에는 다른 문자를 표시합니다.
 """
