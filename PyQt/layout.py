@@ -1,4 +1,4 @@
-# 절대적 배치, 박스 레이아웃
+""" 절대적 배치, 박스 레이아웃 """
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QHBoxLayout, QVBoxLayout
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# 그리드 레이아웃 : 위젯의 공간을 행 (row)과 열 (column)로 구분
+""" 그리드 레이아웃 : 위젯의 공간을 행 (row)과 열 (column)로 구분 """
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QGridLayout, QLabel, QLineEdit, QTextEdit)
 

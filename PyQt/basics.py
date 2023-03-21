@@ -1,4 +1,4 @@
-#  창 띄우기, 어플리케이션 아이콘 넣기, 창 닫기, 툴팁 나타내기
+""" 창 띄우기, 어플리케이션 아이콘 넣기, 창 닫기, 툴팁 나타내기 """
 # import sys
 # from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QToolTip, QDesktopWidget #기본적인 UI 구성요소를 제공하는 위젯
 # from PyQt5.QtCore import QCoreApplication
@@ -48,7 +48,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# 상태바 만들기
+""" 상태바 만들기 """
 # import sys
 # from PyQt5.QtWidgets import QApplication, QMainWindow
 
@@ -76,7 +76,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# 메뉴바 만들기
+""" 메뉴바 만들기 """
 # import sys
 # from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, qApp
 # from PyQt5.QtGui import QIcon
@@ -118,7 +118,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# # 날짜와 시간 표시하기
+""" 날짜와 시간 표시하기 """
 # from PyQt5.QtCore import QDate, Qt, QTime, QDateTime
 
 
@@ -153,7 +153,7 @@
 # print(datetime.toString(Qt.DefaultLocaleShortDate))
 
 
-# # 상태 표시줄에 날짜 표시하기
+""" 상태 표시줄에 날짜 표시하기 """
 # import sys
 # from PyQt5.QtWidgets import QApplication, QMainWindow
 # from PyQt5.QtCore import QDate, Qt
@@ -183,7 +183,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-# 스타일 꾸미기
+""" 스타일 꾸미기 """
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 
